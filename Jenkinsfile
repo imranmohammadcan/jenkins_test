@@ -23,6 +23,7 @@ pipeline {
                  sh 'docker push imran319/sunny:v2'
                 
             }
+        }
         stage('Deploying to Docker Swarm') {
             steps {
               sh 'docker -H tcp://172.31.29.37:2375 run --rm -dit --name webapp1 --hostname webapp1 -p 9001:80 imran319/sunny:v2'
