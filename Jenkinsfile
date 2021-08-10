@@ -1,7 +1,7 @@
 pipeline {
     environment {
         VERSION = "${BUILD_NUMBER}"
-        PROJECT = "wabapp"
+        PROJECT = "wabapp2"
     }
     agent any
     stages {
@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploying to Docker Swarm') {
             steps {
-              sh 'docker -H tcp://172.31.29.37:2375 run --rm -dit --name webapp1 --hostname webapp1 -p 9001:80 imran319/sunny:v2'
+              sh 'docker -H tcp://172.31.29.37:2375 run --rm -dit --name webapp2 --hostname webapp2 -p 9001:80 imran319/sunny:v2'
             }
         }
         stage('Verifying The Deployment') {
