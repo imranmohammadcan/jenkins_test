@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh 'cd /var/lib/jenkins/workspace/sunny1/dockertest1'
                 sh 'cp /var/lib/jenkins/workspace/sunny1/dockertest1/* /var/lib/jenkins/workspace/sunny1'
-                sh 'docker build -t imran319/sunny:v2'
+                sh 'docker build . -t imran319/sunny:v2'
             }
         }
         stage('Push Image To DockerHUB') {
