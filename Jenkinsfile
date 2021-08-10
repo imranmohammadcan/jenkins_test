@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Verifying The Deployment') {
             steps {
-                 sh 'curl ec2-3-15-184-97.us-east-2.compute.amazonaws.com:900' 
+                 sh 'curl ec2-3-15-184-97.us-east-2.compute.amazonaws.com:9001' 
                 }
         }
     }
