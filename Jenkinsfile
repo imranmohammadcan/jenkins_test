@@ -32,12 +32,12 @@ pipeline {
         stage('Verifying The Deployment') {
             steps {
                  sh 'curl ec2-13-58-201-216.us-east-2.compute.amazonaws.com:9002' 
-                }
+            }
         }
         post {
             always {
                  cleanWs()
-             }
-         } 
+            }
+        } 
     }
 }
