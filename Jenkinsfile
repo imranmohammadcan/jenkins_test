@@ -26,13 +26,18 @@ pipeline {
         }
         stage('Deploying to Docker Swarm') {
             steps {  
-              sh 'docker -H tcp://172.31.29.37:2375 run --rm -dit --name webapp3 --hostname webapp3 -p 9001:80 imran319/sunny:v2'
+              sh 'docker -H tcp://172.31.29.37:2375 run --rm -dit --name webapp5 --hostname webapp5 -p 9002:80 imran319/sunny:v2'
             }
         }
         stage('Verifying The Deployment') {
             steps {
-                 sh 'curl ec2-3-15-184-97.us-east-2.compute.amazonaws.com:9001' 
+                 sh 'curl ec2-13-58-201-216.us-east-2.compute.amazonaws.com:9002' 
                 }
         }
+        post {
+            always {
+                 cleanWs()
+             }
+         } 
     }
 }
